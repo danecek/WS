@@ -10,13 +10,15 @@ import java.util.Collections;
 import java.util.List;
 import javax.xml.bind.annotation.*;
 
-
 @XmlRootElement
 @XmlSeeAlso(Root.Element.class)
 public class Root {
-    
 
-   public static class Element {
+    @XmlElement
+    public static final int CONST = 10;
+
+    public static class Element {
+
         private int content;
 
         public Element(int content) {
@@ -40,6 +42,6 @@ public class Root {
     }
     @XmlElementWrapper(name = "wrapper")
     public List<Element> elems = new ArrayList<>();
-    public int x =20;
+    public int x = 20;
 
 }

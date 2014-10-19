@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+            jxb:version="2.0">
+    <xsd:element name="DateTime" type="DateTimeType"/>
+
+
+    <xsd:complexType name="DateTimeType">
+        <xsd:sequence>
+            <xsd:element name="Date" type="xsd:date"/>
+            <xsd:element name="Time" type="xsd:time"/>
+        </xsd:sequence>
+    </xsd:complexType>
+  
+
+</xsd:schema>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Greetings>
+    <Greeting language="en">
+        <Text>hello</Text>
+    </Greeting>
+    <Greeting language="cs">
+        <Text>ahoj</Text>
+    </Greeting>
+</Greetings>

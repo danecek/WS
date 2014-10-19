@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+            jxb:version="2.0">
+    <xsd:element name="NumericZoo" type="NumericZooType"/>
+
+    <xsd:complexType name="NumericZooType">
+        <xsd:sequence>
+            <xsd:element name="decimal" type= "xsd:decimal"/>
+            <xsd:element name="integer" type="xsd:integer"/>
+            <xsd:element name="long"   type="xsd:long"/>
+            <xsd:element name="int" type="xsd:int" default="42"/>
+            <xsd:element name="short_nil" type="xsd:short" nillable="true"/>
+            <xsd:element name="byte" type="xsd:byte" default="13"
+             nillable="true"/>
+            <xsd:element name="nonNegative" type="xsd:nonNegativeInteger"/>
+            <xsd:element name="unsignedLong"    type="xsd:unsignedLong"/>
+            <xsd:element name="unsignedInt"     type="xsd:unsignedInt"/>
+        </xsd:sequence>
+    </xsd:complexType>
+
+</xsd:schema>

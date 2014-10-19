@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+            jxb:version="2.0">
+    
+    <xsd:element name="PersonList" type="PersonListType"/>
+    
+    <xsd:complexType name="PersonListType">
+        <xsd:sequence>
+            <xsd:choice minOccurs="0" maxOccurs="unbounded">
+                <xsd:element name="male" type="PersonType"/>
+                <xsd:element name="female" type="PersonType"/>
+            </xsd:choice>
+        </xsd:sequence>
+    </xsd:complexType>
+    <xsd:complexType name="PersonType">
+        <xsd:attribute name="name" type="xsd:string"/> 
+    </xsd:complexType>
+
+</xsd:schema>
