@@ -1,0 +1,4 @@
+mvn archetype:generate -DarchetypeArtifactId=jersey-quickstart-grizzly2 \
+-DarchetypeGroupId=org.glassfish.jersey.archetypes -DinteractiveMode=false -DarchetypeVersion=2.13 \
+-DgroupId=$1 -DartifactId=$2 
+
