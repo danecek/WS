@@ -6,12 +6,25 @@ package ws.saajservice;
  * and open the template in the editor.
  */
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.InputStream;
+import java.util.Enumeration;
+import java.util.Iterator;
+import java.util.StringTokenizer;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
+import javax.servlet.ServletOutputStream;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.xml.soap.AttachmentPart;
+import javax.xml.soap.MessageFactory;
+import javax.xml.soap.MimeHeaders;
+import javax.xml.soap.SOAPBody;
+import javax.xml.soap.SOAPException;
+import javax.xml.soap.SOAPFactory;
+import javax.xml.soap.SOAPMessage;
 
 /**
  *
@@ -20,84 +33,67 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(urlPatterns = {"/ServiceServlet"})
 public class ServiceServlet extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet ServiceServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet ServiceServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
-            public void doPost(HttpServletRequest req, HttpServletResponse res) 
-      throws ServletException, IOException {
-      ...
-MimeHeaders mimeHeaders = new MimeHeaders();
-Enumeration en = req.getHeaderNames();
-while (en.hasMoreElements()) {
-    String headerName = (String)en.nextElement();
-    String headerVal = req.getHeader(headerName);
-    StringTokenizer tk = new StringTokenizer(headerVal, ",");
-    while (tk.hasMoreTokens()){
-        mimeHeaders.addHeader(headerName, tk.nextToken().trim());
-    }
-}
-SOAPMessage message =
-    messageFactory.createMessage(mimeHeaders, req.getInputStream());
+    private MessageFactory messageFactory;
+    private SOAPFactory soapFactory;
+
+    @Override
+    public void init() throws ServletException {
+        try {
+            messageFactory = MessageFactory.newInstance();
+            soapFactory = SOAPFactory.newInstance();
+        } catch (SOAPException ex) {
+            Logger.getLogger(ServiceServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        doPost(req, resp); //To change body of generated methods, choose Tools | Templates.
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
+    private static int len(InputStream is) throws IOException {
+        byte[] buff = new byte[1024];
+        int len = 0;
+        int read = 0;
+        while ((read = is.read(buff, 0, buff.length)) != -1) {
+            len += read;
+        }
+        return len;
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+//    SOAPMessage createResponseMessage() throws SOAPException {
+//        SOAPMessage responseMessage = messageFactory.createMessage();
+//        SOAPBody responseBody = responseMessage.getSOAPBody();
+//        responseBody.addTextNode(mess);
+//        return responseMessage;
+//    }
     @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
+    public void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        try (ServletOutputStream os = response.getOutputStream()) {
+            response.setContentType("text/xml;charset=UTF-8");
+            MimeHeaders mimeHeaders = new MimeHeaders();
+            Enumeration en = request.getHeaderNames();
+            while (en.hasMoreElements()) {
+                String headerName = (String) en.nextElement();
+                String headerVal = request.getHeader(headerName);
+                StringTokenizer tk = new StringTokenizer(headerVal, ",");
+                while (tk.hasMoreTokens()) {
+                    mimeHeaders.addHeader(headerName, tk.nextToken().trim());
+                }
+            }
+            SOAPMessage message
+                    = messageFactory.createMessage(mimeHeaders, request.getInputStream());
+            Iterator<AttachmentPart> attachments = message.getAttachments();
+            AttachmentPart att = attachments.next();
+            InputStream is = att.getDataHandler().getInputStream();
+            SOAPMessage responseMessage = messageFactory.createMessage();
+            SOAPBody responseBody = responseMessage.getSOAPBody();
+            responseBody.addTextNode(Integer.toString(len(is)));
+            responseMessage.writeTo(os);
+        } catch (SOAPException se) {
+            throw new ServletException(se);
+        }
+    }
 
 }
