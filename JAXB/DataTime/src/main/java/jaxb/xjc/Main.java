@@ -7,7 +7,6 @@ package jaxb.xjc;
 
 import generated.DateTimeType;
 import generated.ObjectFactory;
-import java.io.File;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 import javax.xml.bind.JAXBContext;

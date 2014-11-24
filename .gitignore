@@ -24,3 +24,8 @@
 /JAXWS/HWClient/target/
 /JAXWS/SAAJService/SAAJService/target/
 /JAXWS/SAAJClient/target/
+/JAXB/j2sxmladapter/target/
+/JAXWS/ws-parent/client/target/
+/JAXWS/ws-parent/service/target/
+/JAXWS/ws-parent-copy/service/target/
+/JAXWS/ws-parent-copy/client/target/

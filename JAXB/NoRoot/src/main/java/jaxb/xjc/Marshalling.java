@@ -1,6 +1,5 @@
 package jaxb.xjc;
 
-import generated.GreetingType;
 import generated.ObjectFactory;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;

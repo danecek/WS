@@ -15,11 +15,11 @@
     <xsd:simpleType name="SafeIXLType">
         <xsd:restriction base="xsd:string">
             <xsd:enumeration value="eStwA">
-            <xsd:annotation>
-                <xsd:appinfo>
-                    <jxb:typesafeEnumMember name="eStwA"/>
-                </xsd:appinfo>
-            </xsd:annotation>
+                <xsd:annotation>
+                    <xsd:appinfo>
+                        <jxb:typesafeEnumMember name="eStwA"/>
+                    </xsd:appinfo>
+                </xsd:annotation>
             </xsd:enumeration>
         </xsd:restriction>
     </xsd:simpleType>
