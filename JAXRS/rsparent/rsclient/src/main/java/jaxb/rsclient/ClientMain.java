@@ -31,7 +31,6 @@ public class ClientMain {
 
         Client client = ClientBuilder.newClient();
 
-        client.register(new MyLoggingFilter());
         client.register(new MyReaderInterceptor());
         WebTarget target = client.target("http://localhost:9998").path("resource");
 
