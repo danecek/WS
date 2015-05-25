@@ -21,7 +21,7 @@ public class UploadImpl {
     // Use @XmlMimeType to map to DataHandler on the client side
     public String fileUpload(String name,
             @XmlMimeType("application/octet-stream") DataHandler data) {
-        String fl = "xxx";
+        String fl = "undefined";
         try {
             StreamingDataHandler dh = (StreamingDataHandler) data;
             BufferedReader br = new BufferedReader(new InputStreamReader(dh.getInputStream()));
