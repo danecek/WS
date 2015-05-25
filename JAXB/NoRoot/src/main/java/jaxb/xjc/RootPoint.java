@@ -1,17 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package jaxb.xjc;
 
 import javax.xml.bind.annotation.XmlRootElement;
 
-/**
- *
- * @author danecek
- */
-@XmlRootElement(name="mypoint", namespace = "http://points")
+@XmlRootElement(name = "mypoint", namespace = "http://points")
 public class RootPoint {
 
     public RootPoint() {

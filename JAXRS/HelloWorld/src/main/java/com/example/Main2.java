@@ -15,7 +15,9 @@ import org.glassfish.grizzly.http.server.HttpHandler;
 public class Main2 {
 
     public static void main(String[] args) {
+        http  =JdkHttpServerFactory.createHttpServer();
         HttpHandler endpoint = RuntimeDelegate.getInstance()
-                .createEndpoint(new MyApplication(), HttpHandler.class);
+                .createEndpoint(new MyApplication(), MyHandler.class);
+        endpoint.start();
     }
 }

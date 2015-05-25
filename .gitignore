@@ -29,3 +29,8 @@
 /JAXWS/ws-parent/service/target/
 /JAXWS/ws-parent-copy/service/target/
 /JAXWS/ws-parent-copy/client/target/
+/JAXB/BinaryData/target/
+/JAXB/Validation/target/
+/JAXB/PlainMarshalization/target/
+/JAXRS/rsparent/rsclient/target/
+/JAXRS/rsparent/rsservice/target/
