@@ -34,3 +34,9 @@
 /JAXB/PlainMarshalization/target/
 /JAXRS/rsparent/rsclient/target/
 /JAXRS/rsparent/rsservice/target/
+/JAXWS/SAAJService/SAAJ/target/
+/JAXWS/SAAJ/SAAJService/target/
+/JAXWS/HWDispatchClient/target/
+/JAXWS/ProviderService/target/
+/JAXWS/JSE/client/target/
+/JAXWS/MTOM/UploadFileClient/target/
