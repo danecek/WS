@@ -20,7 +20,6 @@ public class ItemsAdapter extends XmlAdapter<ItemsList, ItemsMap> {
         ItemsList courses = new ItemsList();
         for (Map.Entry e : b.items.entrySet()) {
             courses.addItem(e.toString());//.getKey().toString() + ':' + e.getValue());
-
         }
         return courses;
     }

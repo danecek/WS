@@ -25,7 +25,7 @@ public class Marshalling {
         
         Marshaller m = jc.createMarshaller();
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema s = sf.newSchema(Marshalling.class.getResource("/xmlSchema.xsd"));
+        Schema s = sf.newSchema(Void.TYPE.getResource("/xmlSchema.xsd"));
         m.setSchema(s);
         m.setProperty("jaxb.formatted.output", true);
         m.setEventHandler(new ValidationEventHandler() {

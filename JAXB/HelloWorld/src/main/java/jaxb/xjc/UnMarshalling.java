@@ -15,10 +15,10 @@ import javax.xml.bind.Unmarshaller;
 public class UnMarshalling {
 
     public static void main(String[] args) throws JAXBException {
-
         JAXBContext jc = JAXBContext.newInstance("generated");
         Unmarshaller m = jc.createUnmarshaller();
         JAXBElement<GreetingListType> element = (JAXBElement) m.unmarshal(new File("greetings"));
         GreetingListType greetingList = element.getValue();
+        System.out.println(greetingList.getGreeting());
     }
 }

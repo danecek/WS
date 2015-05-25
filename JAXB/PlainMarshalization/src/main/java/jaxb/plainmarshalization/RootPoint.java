@@ -6,9 +6,9 @@
 package jaxb.plainmarshalization;
 
 import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
-//@XmlRootElement(name = "mypoint", namespace = "http://points")
-
+@XmlRootElement(name = "mypoint", namespace = "http://points")
 public class RootPoint {
 
     private int x;
@@ -21,7 +21,6 @@ public class RootPoint {
         this.x = x;
         this.y = y;
     }
-
 
     @XmlElement
     public int getX() {

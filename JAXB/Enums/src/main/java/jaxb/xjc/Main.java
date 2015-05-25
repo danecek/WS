@@ -5,10 +5,14 @@
  */
 package jaxb.xjc;
 
+import generated.IXLType;
+import generated.ObjectFactory;
 import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
 import javax.xml.datatype.DatatypeConfigurationException;
+import javax.xml.namespace.QName;
 
 /**
  *
@@ -18,9 +22,10 @@ public class Main {
 
     public static void main(String[] args) throws DatatypeConfigurationException, JAXBException {
 
-        JAXBContext jc = JAXBContext.newInstance("generated");
+        JAXBContext jc = JAXBContext.newInstance(IXLType.class);
         Marshaller m = jc.createMarshaller();
         m.setProperty("jaxb.formatted.output", true);
-        //      m.marshal(of.createDateTime(rootElement), System.out);
+        IXLType ixlt = IXLType.E_STW_A;
+        m.marshal(new JAXBElement<IXLType>(new QName("ixlelement"), IXLType.class, ixlt), System.out);
     }
 }
