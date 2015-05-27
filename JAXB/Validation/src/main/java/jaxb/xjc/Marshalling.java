@@ -25,7 +25,7 @@ public class Marshalling {
         
         Marshaller m = jc.createMarshaller();
         SchemaFactory sf = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
-        Schema s = sf.newSchema(Void.TYPE.getResource("/xmlSchema.xsd"));
+        Schema s = sf.newSchema(Void.TYPE.getResource("/invalidschema/invalidXmlSchema.xsd"));
         m.setSchema(s);
         m.setProperty("jaxb.formatted.output", true);
         m.setEventHandler(new ValidationEventHandler() {
@@ -34,7 +34,6 @@ public class Marshalling {
             public boolean handleEvent(ValidationEvent event) {
                 System.out.println(event);
                 return true;
-                //  throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
             }
         });
         m.marshal(rootElm, System.out);

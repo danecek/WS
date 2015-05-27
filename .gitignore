@@ -40,3 +40,7 @@
 /JAXWS/ProviderService/target/
 /JAXWS/JSE/client/target/
 /JAXWS/MTOM/UploadFileClient/target/
+/JAXWS/JSE/service/target/
+/JAXWS/SAAJ/SAAJClient/target/
+/JAXWS/JSE/JSEWSService/target/
+/JAXWS/JSE/JSEWSClient/target/

@@ -11,13 +11,13 @@ import java.util.List;
 import javax.xml.bind.annotation.*;
 
 @XmlRootElement
-@XmlSeeAlso(Root.Element.class)
+//@XmlSeeAlso(Root.Element.class)
 public class Root {
 
-    @XmlElement
+ //   @XmlElement
     public static final int CONST = 10;
-
-    public static class Element {
+    
+    public static class Element  {
 
         private int content;
 
@@ -40,7 +40,7 @@ public class Root {
     public Root() {
         Collections.addAll(elems, new Element(1), new Element(2));
     }
-    @XmlElementWrapper(name = "wrapper")
+  //  @XmlElementWrapper(name = "wrapper")
     public List<Element> elems = new ArrayList<>();
     public int x = 20;
 

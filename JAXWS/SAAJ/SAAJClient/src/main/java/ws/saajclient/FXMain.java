@@ -59,11 +59,13 @@ public class FXMain extends Application {
         });
 
         GridPane root = new GridPane();
-        root.setGridLinesVisible(true);
+      //  root.setGridLinesVisible(true);
         root.setPadding(new Insets(10));
         root.setVgap(10);
         root.setHgap(10);
-        root.add(new Label("File length:"), 0, 0);
+        Label l;
+        root.add(l=new Label("File length:"), 0, 0);
+        l.setStyle("");
         root.setAlignment(Pos.CENTER);
 
         root.add(fileLength, 1, 0);
