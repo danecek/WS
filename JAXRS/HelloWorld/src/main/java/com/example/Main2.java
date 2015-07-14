@@ -5,8 +5,11 @@
  */
 package com.example;
 
-import javax.ws.rs.ext.RuntimeDelegate;
-import org.glassfish.grizzly.http.server.HttpHandler;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+import org.glassfish.jersey.jdkhttp.JdkHttpServerFactory;
+import org.glassfish.jersey.server.ResourceConfig;
 
 /**
  *
@@ -14,10 +17,15 @@ import org.glassfish.grizzly.http.server.HttpHandler;
  */
 public class Main2 {
 
-    public static void main(String[] args) {
-        http  =JdkHttpServerFactory.createHttpServer();
-        HttpHandler endpoint = RuntimeDelegate.getInstance()
-                .createEndpoint(new MyApplication(), MyHandler.class);
-        endpoint.start();
+    public static void main(String[] args) throws URISyntaxException {
+      //  URI baseUri = UriBuilder.fromUri("http://localhost/").port(9998).build();
+        ResourceConfig config = new ResourceConfig(MyResource.class);
+        JdkHttpServerFactory.createHttpServer(URI.create(Main.BASE_URI), config);
+
+//        ResourceConfig rc = new ResourceConfig(MyResource.class);//, MyHandler.class);
+//        Object http = JdkHttpServerFactory.createHttpServer(new URI(Main.BASE_URI), rc);
+//        HttpHandler endpoint = RuntimeDelegate.getInstance()
+//                .createEndpoint(new MyApplication(), MyHandler.class);
+//        endpoint.start();
     }
 }
