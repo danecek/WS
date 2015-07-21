@@ -5,17 +5,18 @@
  */
 package com.example;
 
-import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.*;
 
 /**
  *
  * @author danecek
  */
-public class Client {
-
+public class MyClient {
+    
     public static void main(String[] args) {
-        String responseEntity = ClientBuilder.newClient().target("http://localhost:8080/myapp").path("myresource")
-                .request().get(String.class);
+        Client c = ClientBuilder.newClient();
+        WebTarget target = c.target(Main.uriBuilder).path("myresource");
+        String responseEntity = target.request().get(String.class);
         System.out.println(responseEntity);
     }
 }

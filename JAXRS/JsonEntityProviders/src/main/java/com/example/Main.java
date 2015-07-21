@@ -20,6 +20,7 @@ public class Main {
         URI baseUri = uriBuilder.build();
         System.out.println(baseUri);
         ResourceConfig config = new ResourceConfig(MyResource.class);
+        config.register(new  MyBeanMessageBodyWriter());
         return JdkHttpServerFactory.createHttpServer(baseUri, config);
     }
 }

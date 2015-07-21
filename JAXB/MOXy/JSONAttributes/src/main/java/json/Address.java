@@ -1,0 +1,29 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package json;
+
+import javax.xml.bind.annotation.XmlAttribute;
+
+public class Address {
+
+    public Address() {
+    }
+
+    public Address(String street, int no) {
+        this.street = street;
+        this.no = no;
+    }
+
+    @Override
+    public String toString() {
+        return "Address{" + "street=" + street + ", no=" + no + '}';
+    }
+
+    @XmlAttribute
+    public String street;
+    public int no;
+
+}

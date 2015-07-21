@@ -19,7 +19,7 @@ public class Main {
     static HttpServer startServer() {
         URI baseUri = uriBuilder.build();
         System.out.println(baseUri);
-        ResourceConfig config = new ResourceConfig(MyResource.class);
+        ResourceConfig config = new ResourceConfig(MyResource.class, PoweredByResponseFilter.class);
         return JdkHttpServerFactory.createHttpServer(baseUri, config);
     }
 }

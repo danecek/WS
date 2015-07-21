@@ -21,17 +21,18 @@ public class MyResourceTest {
         server = Main.startServer();
         // create the client
         Client c = ClientBuilder.newClient();
+        c.register(MyBeanMessageBodyReader.class);
         target = c.target(Main.uriBuilder);
     }
 
     @After
-    public void shutDown() {
+    public void x() {
         server.stop(1);
     }
 
     @Test
     public void testGetIt() {
-        String responseMsg = target.path("myresource").request().get(String.class);
-        assertEquals("Got it!", responseMsg);
+        MyBean responseMsg = target.path("resource").request().get(MyBean.class);
+        assertEquals(MyResource.MY_BEAN, responseMsg);
     }
 }

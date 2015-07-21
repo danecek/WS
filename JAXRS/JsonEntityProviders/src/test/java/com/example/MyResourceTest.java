@@ -4,6 +4,7 @@ import com.sun.net.httpserver.HttpServer;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
+import javax.ws.rs.core.MediaType;
 
 import org.junit.Before;
 import org.junit.After;
@@ -30,8 +31,9 @@ public class MyResourceTest {
     }
 
     @Test
-    public void testGetIt() {
-        String responseMsg = target.path("myresource").request().get(String.class);
-        assertEquals("Got it!", responseMsg);
+    public void testGet() {
+        MyBean myBean = target.path("resource").request(MediaType.APPLICATION_JSON_TYPE).get(MyBean.class);
+        System.out.println(myBean);
+        assertEquals(MyResource.MY_BEAN, myBean);
     }
 }
