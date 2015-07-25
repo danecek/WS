@@ -66,3 +66,4 @@
 /JAXRS/ContainerRequestFilter/target/
 /QOS/https-clientserver-grizzly/target/
 /WSHelloWorld/target/
+/WSHelloWorldClient/target/
