@@ -3,7 +3,6 @@ package com.example;
 import com.sun.net.httpserver.HttpServer;
 import java.io.IOException;
 import java.net.MalformedURLException;
-import java.net.URLConnection;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Invocation;
@@ -12,7 +11,6 @@ import javax.ws.rs.client.WebTarget;
 import org.junit.Before;
 import org.junit.After;
 import org.junit.Test;
-import static org.junit.Assert.assertEquals;
 
 public class MyResourceTest {
 
