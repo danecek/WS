@@ -1,5 +1,5 @@
 generated/GreetingListType.class
+jaxb/UnMarshalling.class
 generated/ObjectFactory.class
 generated/GreetingType.class
-jaxb/xjc/Marshalling.class
-jaxb/xjc/UnMarshalling.class
+jaxb/Main.class

@@ -2,13 +2,12 @@
 <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
             xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
             jxb:version="2.0">
-    <xsd:element name="JavaObject" type="JavaObjectType"/>
+    <xsd:element name="Binary" type="BinaryType"/>
 
-    <xsd:complexType name="JavaObjectType">
+    <xsd:complexType name="BinaryType">
         <xsd:sequence>
             <xsd:element name="data" type="xsd:hexBinary"/>
         </xsd:sequence>
     </xsd:complexType>
-    <xsd:element name="container" type="JavaObjectType"/>
 
 </xsd:schema>
