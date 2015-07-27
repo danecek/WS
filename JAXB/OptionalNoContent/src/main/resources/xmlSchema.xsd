@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+            jxb:version="2.0">
+    <xsd:element name="Route" type="RouteType"/>
+
+    <xsd:complexType name="RouteType">
+        <xsd:attribute name="Pos" type="xsd:int" use="optional"
+                 default="1"/>
+        <xsd:attribute name="Pos1" type="xsd:int" 
+                 default="1"/>
+        <xsd:attribute name="Pos2" type="xsd:int"/>
+    </xsd:complexType>
+
+</xsd:schema>

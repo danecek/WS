@@ -67,3 +67,7 @@
 /QOS/https-clientserver-grizzly/target/
 /WSHelloWorld/target/
 /WSHelloWorldClient/target/
+/JAXB/HelloWorld/target/
+/JAXB/IntegerRange/target/
+/JAXB/NumericTypes/target/
+/JAXB/OptionalNoContent/target/
