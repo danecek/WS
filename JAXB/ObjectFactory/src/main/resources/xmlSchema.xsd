@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+            xmlns:jxb="http://java.sun.com/xml/ns/jaxb"
+            jxb:version="2.0">
+    <xsd:element name="circle">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="radius" type="xsd:double"/>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+    <xsd:element name="square" type="squareType"/>
+    <xsd:complexType name="squareType">
+        <xsd:sequence>
+            <xsd:element name="edge" type="xsd:double"/>
+        </xsd:sequence>
+    </xsd:complexType>
+</xsd:schema>
