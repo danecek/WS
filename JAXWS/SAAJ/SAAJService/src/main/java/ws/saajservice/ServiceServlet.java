@@ -23,7 +23,6 @@ import javax.xml.soap.MessageFactory;
 import javax.xml.soap.MimeHeaders;
 import javax.xml.soap.SOAPBody;
 import javax.xml.soap.SOAPException;
-import javax.xml.soap.SOAPFactory;
 import javax.xml.soap.SOAPMessage;
 
 /**
@@ -34,13 +33,11 @@ import javax.xml.soap.SOAPMessage;
 public class ServiceServlet extends HttpServlet {
 
     private MessageFactory messageFactory;
-    private SOAPFactory soapFactory;
 
     @Override
     public void init() throws ServletException {
         try {
             messageFactory = MessageFactory.newInstance();
-            soapFactory = SOAPFactory.newInstance();
         } catch (SOAPException ex) {
             Logger.getLogger(ServiceServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -48,7 +45,7 @@ public class ServiceServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        doPost(req, resp); //To change body of generated methods, choose Tools | Templates.
+        doPost(req, resp);
     }
 
     private static int len(InputStream is) throws IOException {
@@ -61,12 +58,6 @@ public class ServiceServlet extends HttpServlet {
         return len;
     }
 
-//    SOAPMessage createResponseMessage() throws SOAPException {
-//        SOAPMessage responseMessage = messageFactory.createMessage();
-//        SOAPBody responseBody = responseMessage.getSOAPBody();
-//        responseBody.addTextNode(mess);
-//        return responseMessage;
-//    }
     @Override
     public void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

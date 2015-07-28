@@ -1,0 +1,8 @@
+ws/service/Greeting.class
+ws/client/WSClient.class
+ws/service/SayHelloResponse.class
+ws/service/SayHello.class
+ws/service/package-info.class
+ws/client/NewLogicalHandler.class
+ws/service/ObjectFactory.class
+ws/service/GreetingImplService.class

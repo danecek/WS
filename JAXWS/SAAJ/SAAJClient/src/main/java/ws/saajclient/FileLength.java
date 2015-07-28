@@ -30,16 +30,11 @@ public class FileLength {
 
     public FileLength() {
         try {
-            //  setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
             factory = SOAPConnectionFactory.newInstance();
             connection = factory.createConnection();
             endpoint = new URL("http://localhost:8080/SAAJService/ServiceServlet");
             mf = MessageFactory.newInstance();
-        } catch (SOAPException ex) {
-            Logger.getLogger(FileLength.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (UnsupportedOperationException ex) {
-            Logger.getLogger(FileLength.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (MalformedURLException ex) {
+        } catch (SOAPException | UnsupportedOperationException | MalformedURLException ex) {
             Logger.getLogger(FileLength.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
