@@ -5,7 +5,6 @@
  */
 package jaxb;
 
-import generated.GreetingListType;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;

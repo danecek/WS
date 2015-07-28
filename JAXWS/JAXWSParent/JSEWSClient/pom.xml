@@ -21,7 +21,6 @@
             <plugin>
                 <groupId>org.jvnet.jax-ws-commons</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
-                
                 <executions>
                     <execution>
                         <id>generate-stubs</id>
