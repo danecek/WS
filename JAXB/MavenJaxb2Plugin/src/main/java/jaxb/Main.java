@@ -1,9 +1,11 @@
 package jaxb;
 
+import generated.GreetingListType;
+import generated.GreetingType;
+import generated.ObjectFactory;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
-import javax.naming.spi.ObjectFactory;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBElement;
 import javax.xml.bind.JAXBException;

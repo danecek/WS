@@ -74,3 +74,11 @@
 /JAXB/SeeAlso/target/
 /JAXB/SchemaGen/target/
 /JAXB/MavenJaxb2Plugin/target/
+/JAXWS/JAXWSParent/JSEWSService/target/
+/JAXWS/JAXWSParent/JSEWSClient/target/
+/JAXWS/JAXWSParent/JAXWSClientDispatchSOAP/target/
+/JAXWS/JAXWSParent/JAXWSClientDispatchSource/target/
+/JAXWS/JAXWSParent/JAXWSClientDispatchJAXB/target/
+/JAXWS/JAXWSParent/JAXWSClientDispatchAsync/target/
+/JAXWS/JAXWSParent/JAXWSClientHandler/target/
+/JAXWS/MTOMParent/MTOMClient/target/
