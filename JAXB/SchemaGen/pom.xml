@@ -2,7 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>jaxb</groupId>
-    <artifactId>SeeAlso</artifactId>
+    <artifactId>SchemaGen</artifactId>
     <version>1.0-SNAPSHOT</version>
     <packaging>jar</packaging>
     <properties>
@@ -14,16 +14,30 @@
     <build>
         <plugins>
             <plugin>
-                <groupId>org.jvnet.jaxb2.maven2</groupId>
-                <artifactId>maven-jaxb2-plugin</artifactId>
-                <version>0.12.3</version>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.5</version>
                 <executions>
                     <execution>
+                        <id>schemagen</id>
                         <goals>
-                            <goal>generate</goal>
+                            <goal>schemagen</goal>
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <transformSchemas>
+                        <transformSchema>
+                            <uri>http://www.example.org/employee</uri>
+                            <toPrefix>empns</toPrefix>
+                            <toFile>employee.xsd</toFile>
+                        </transformSchema>
+                    </transformSchemas>
+                    <includes>
+                        <include>jaxb/*</include>
+                    </includes>
+                    <verbose>true</verbose> 
+                </configuration>
             </plugin>
         </plugins>
     </build>
@@ -41,5 +55,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-    <name>SeeAlso</name>
 </project>

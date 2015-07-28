@@ -5,26 +5,14 @@
  */
 package ws.hwclient;
 
-import com.sun.xml.internal.ws.developer.JAXBContextFactory;
-import com.sun.xml.internal.ws.util.xml.StAXSource;
-import java.io.Reader;
-import java.io.StringReader;
-import java.io.StringWriter;
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.namespace.QName;
 import javax.xml.transform.Source;
-import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerConfigurationException;
 import javax.xml.transform.TransformerException;
-import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.stream.StreamResult;
-import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.Dispatch;
 import javax.xml.ws.Service;
-import javax.xml.ws.WebServiceRef;
-import org.xml.sax.InputSource;
-import org.xml.sax.XMLReader;
 
 /**
  *
