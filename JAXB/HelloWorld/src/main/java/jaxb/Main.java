@@ -1,25 +1,26 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package jaxb;
 
-import generated.ObjectFactory;
 import java.io.File;
 import java.io.IOException;
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBElement;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.namespace.QName;
+import java.nio.file.Files;
+import javax.xml.bind.JAXB;
 
+/**
+ *
+ * @author danecek
+ */
 public class Main {
 
-    static ObjectFactory of = new ObjectFactory();
-    public static final File FILE = new File("greetings");
-
-    public static void main(String[] args) throws JAXBException, IOException {
-        JAXBContext ctx = JAXBContext.newInstance(Shape.class);
-        Marshaller m = ctx.createMarshaller();
-        m.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-        JAXBElement<Circle> root = new JAXBElement(new QName("circle"), Circle.class, new Circle(2));
-
-        m.marshal(root, System.out);
+    public static void main(String[] args) throws IOException {
+        File pointXML = new File("point.xml");
+        JAXB.marshal(new Point(3, 4), pointXML);
+        Files.copy(pointXML.toPath(), System.out);
+        Point point = JAXB.unmarshal(pointXML, Point.class);
+        System.out.println(point);
     }
 }

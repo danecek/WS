@@ -71,3 +71,7 @@
 /JAXB/IntegerRange/target/
 /JAXB/NumericTypes/target/
 /JAXB/OptionalNoContent/target/
+/JAXB/SeeAlso/target/
+/JAXB/SeeAlso/nbproject/
+/JAXB/SchemaGen/target/
+/JAXB/JavaApplication29/nbproject/private/
