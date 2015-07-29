@@ -82,3 +82,6 @@
 /JAXWS/JAXWSParent/JAXWSClientDispatchAsync/target/
 /JAXWS/JAXWSParent/JAXWSClientHandler/target/
 /JAXWS/MTOMParent/MTOMClient/target/
+/JAXWS/ProviderParent/ProviderClient/target/
+/WSHelloWorldClient/nbproject/
+/WSHelloWorldClient/build/

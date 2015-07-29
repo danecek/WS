@@ -10,7 +10,7 @@ public class MyResource {
 
     @GET
     @Produces(MediaType.TEXT_PLAIN)
-    public String getIt(@Context UriInfo ui) {
+    public String getIt() {
         return "Got it!";
     }
 }

@@ -5,17 +5,19 @@
  */
 package ws.provider;
 
+import java.io.StringReader;
 import javax.xml.ws.Provider;
 import javax.xml.ws.WebServiceProvider;
 import javax.annotation.Resource;
 import javax.xml.transform.Source;
+import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.WebServiceContext;
 
 /**
  *
  * @author danecek
  */
-@WebServiceProvider
+@WebServiceProvider(portName = "pn") 
 public class ProviderWebService implements Provider<Source> {
 
     @Resource
@@ -23,8 +25,7 @@ public class ProviderWebService implements Provider<Source> {
 
     @Override
     public Source invoke(Source request) {
-        
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return new StreamSource(new StringReader("<return>Ahoj</return>"));
     }
 
 }
