@@ -85,3 +85,16 @@
 /JAXWS/ProviderParent/ProviderClient/target/
 /WSHelloWorldClient/nbproject/
 /WSHelloWorldClient/build/
+/JAXRS/MOXy/JSONNoRoot/nbproject/
+/JAXRS/MOXy/MoxyEntities/target/
+/JAXRS/MOXy/Model/target/
+/JAXRS/MOXy/JSONCollections/nbproject/
+/JAXRS/MoxyParent/JSONCollections/nbproject/
+/JAXRS/MoxyParent/JSONNoRoot/nbproject/
+/JAXRS/MoxyParent/JSONHelloWorld/target/
+/JAXRS/MoxyParent/Model/target/
+/JAXRS/MoxyParent/JSONCollections/target/
+/JAXRS/MoxyParent/JSONAttributes/target/
+/JAXRS/MoxyParent/JSONNamespace/target/
+/JAXRS/MoxyParent/JSONNoRoot/target/
+/JAXRS/MoxyParent/XMLHelloWord/target/
