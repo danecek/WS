@@ -14,6 +14,7 @@
         <module>Fluent</module>
         <module>Provider</module>
         <module>ClosingConnection</module>
+        <module>CRUD</module>
     </modules>
     <dependencies>
         <dependency>

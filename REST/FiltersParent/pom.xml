@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>restful</groupId>
         <artifactId>REST</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>JAXRSParent</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <artifactId>FiltersParent</artifactId>
     <packaging>pom</packaging>
     <modules>
-        <module>HelloWorld</module>
-        <module>Put</module>
-        <module>JettyServer</module>
-        <module>GrizzlyServer</module>
-        <module>Logging</module>
-        <module>Complex</module>
-        <module>Collection</module>
+        <module>ContainerRequestFilter</module>
+        <module>ContainerResponseFilter</module>
+        <module>Interceptors</module>
     </modules>
+    <dependencies>
+        <dependency>
+            <groupId>${project.groupId}</groupId>
+            <artifactId>Tools</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
 </project>
