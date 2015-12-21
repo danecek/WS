@@ -31,10 +31,10 @@ public class Tools {
         return startJdkHttpServer(restAppUriBuilder, config);
     }
 
-//    public static WebTarget myAppTarget() {
-//        Client c = ClientBuilder.newClient();
-//        //   c.register(new LoggingFilter(Logger.getAnonymousLogger(), true));
-//        WebTarget target = c.target(restAppUriBuilder);
-//        return target;
-//    }
+    public static WebTarget myAppTarget() {
+        Client c = ClientBuilder.newClient();
+        //   c.register(new LoggingFilter(Logger.getAnonymousLogger(), true));
+        WebTarget target = c.target(restAppUriBuilder);
+        return target;
+    }
 }

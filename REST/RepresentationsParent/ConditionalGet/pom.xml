@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <groupId>restful</groupId>
-        <artifactId>Representations</artifactId>
+        <artifactId>RepresentationsParent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <artifactId>ConditionalGet</artifactId>

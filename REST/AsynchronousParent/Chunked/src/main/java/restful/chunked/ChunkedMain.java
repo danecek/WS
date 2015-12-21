@@ -5,10 +5,7 @@
  */
 package restful.chunked;
 
-import com.sun.javafx.Logging;
 import com.sun.net.httpserver.HttpServer;
-import java.util.HashMap;
-import java.util.Map;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
@@ -17,7 +14,6 @@ import javax.ws.rs.core.Response;
 import org.glassfish.jersey.client.ChunkedInput;
 import org.glassfish.jersey.filter.LoggingFilter;
 import org.glassfish.jersey.server.ResourceConfig;
-import org.glassfish.jersey.server.ServerProperties;
 import restful.tools.Tools;
 
 /**

@@ -175,3 +175,5 @@
 /REST/rsparent/Complex/target/
 /REST/JAXRSParent/Complex/target/
 /REST/JAXRSParent/Collection/target/
+/REST/AsynchronousParent/AsyncHelloWorldServer/target/
+/REST/AsynchronousParent/AsyncHelloWorldClient/target/
