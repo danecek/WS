@@ -39,7 +39,7 @@ public class MainApp extends Application {
         Service service = Service.create(url, qname);
         ImageServer imageServer = service.getPort(ImageServer.class);
 
-        BufferedImage image = imageServer.downloadImage(path);
+        BufferedImage image = (BufferedImage) imageServer.downloadImage(path);
         return SwingFXUtils.toFXImage(image, null);
 
         // return image;
@@ -90,7 +90,7 @@ public class MainApp extends Application {
 
         try {
             Image roses = load(file.getPath());
-                //    = new Image(new FileInputStream(file));
+            //    = new Image(new FileInputStream(file));
             ScrollPane sp = new ScrollPane();
             sp.setContent(new ImageView(roses));
             sp.setHbarPolicy(ScrollBarPolicy.NEVER);

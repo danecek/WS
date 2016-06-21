@@ -33,6 +33,9 @@
                             <wsdlFiles>                   
                                 <wsdlFile>GreetingImplService.wsdl</wsdlFile>
                             </wsdlFiles>
+                            <vmArgs>
+                                <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
+                            </vmArgs>
                             <!-- *** you need the next line to set the wsdlLocation in the generated stubs *** -->
                             <wsdlLocation>http://localhost:8080/WS/Greeting</wsdlLocation> 
                         </configuration>

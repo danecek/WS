@@ -18,7 +18,7 @@
                     <mainClass>ws.service.WSPublisher</mainClass>
                 </configuration>
             </plugin>
-            <plugin>
+            <!-- plugin>
                 <groupId>org.jvnet.jax-ws-commons</groupId>
                 <artifactId>jaxws-maven-plugin</artifactId>
                 <executions>
@@ -29,12 +29,13 @@
                             <goal>wsgen</goal>
                         </goals>
                         <configuration>
-                            <sei><!-- fully qualified class name goes here -->ws.service.GreetingProvider</sei>
+                            <sei>
+ws.service.GreetingProvider</sei>
                             <genWsdl>true</genWsdl>
                         </configuration>
                     </execution>
                 </executions>
-            </plugin>            
+            </plugin -->            
         </plugins>
     </build>
 </project>

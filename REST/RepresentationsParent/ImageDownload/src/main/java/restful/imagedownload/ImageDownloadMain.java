@@ -64,6 +64,5 @@ public class ImageDownloadMain extends JFrame {
 
     public static void main(String[] args) throws HeadlessException, IOException {
         new ImageDownloadMain();
-
     }
 }

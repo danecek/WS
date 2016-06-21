@@ -16,11 +16,9 @@ public class Main {
 
     public static void main(String[] args) {
         System.setProperty("com.sun.xml.internal.ws.transport.http.client.HttpTransportPipe.dump", "true");
-        try { // Call Web Service Operation
+        try { 
             UploadImplService service = new UploadImplService();
             UploadImpl port = service.getUploadImplPort();
-            // TODO initialize WS operation arguments here
-
             DataHandler arg1 = new DataHandler(new FileDataSource("target/classes/ws/uploadfileclient/Main.class"));
             System.out.println(port.fileUpload("xxxx", arg1));
         } catch (Exception ex) {
