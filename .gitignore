@@ -177,3 +177,5 @@
 /REST/JAXRSParent/Collection/target/
 /REST/AsynchronousParent/AsyncHelloWorldServer/target/
 /REST/AsynchronousParent/AsyncHelloWorldClient/target/
+/HelloWS2/target/
+/HelloWS/target/
