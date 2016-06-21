@@ -13,10 +13,6 @@ import javax.xml.transform.Source;
 import javax.xml.transform.stream.StreamSource;
 import javax.xml.ws.WebServiceContext;
 
-/**
- *
- * @author danecek
- */
 @WebServiceProvider(portName = "pn") 
 public class ProviderWebService implements Provider<Source> {
 

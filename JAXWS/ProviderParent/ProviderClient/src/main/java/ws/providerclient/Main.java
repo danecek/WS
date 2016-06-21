@@ -26,10 +26,11 @@ public class Main {
     public static void main(String[] args) throws TransformerConfigurationException, TransformerException {
         System.setProperty("com.sun.xml.internal.ws.transport.http.client.HttpTransportPipe.dump", "true");
 
+        String wsurl = "http://danecek-thinkpad-edge-e220s:8080/ProviderService/ProviderWebService";
         QName sn = new QName("sn");
         Service s = Service.create(sn);
         QName pn = new QName("pn");
-        s.addPort(pn, null, "http://localhost:8080/ProviderService/ProviderWebServiceService");
+        s.addPort(pn, null, wsurl);
         Dispatch<Source> d = s.createDispatch(pn, Source.class, Service.Mode.PAYLOAD);
         Source res = d.invoke(new StreamSource(new StringReader("<x>aaaa</x>")));
         TransformerFactory tf = TransformerFactory.newInstance();
