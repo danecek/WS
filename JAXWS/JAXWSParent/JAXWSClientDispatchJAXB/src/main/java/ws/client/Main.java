@@ -22,7 +22,8 @@ public class Main {
         Dispatch<Object> d = gis.createDispatch(new QName("http://service.ws/", "GreetingImplPort"), jaxbc, Service.Mode.PAYLOAD);
         SayHello sh = of.createSayHello();
         sh.setName("Geroge");
-        JAXBElement<SayHelloResponse> result = (JAXBElement<SayHelloResponse>) d.invoke(of.createSayHello(sh));
+        JAXBElement<SayHelloResponse> result = 
+                      (JAXBElement<SayHelloResponse>) d.invoke(of.createSayHello(sh));
         System.out.println(result.getValue().getReturn());
     }
 

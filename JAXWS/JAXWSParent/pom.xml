@@ -11,12 +11,12 @@
     <modules>
         <module>JSEWSService</module>
         <module>JSEWSClient</module>
-        <module>JAXWSClientDispatchSOAP</module>
-        <module>JAXWSClientDispatchSource</module>
         <module>JAXWSClientDispatchJAXB</module>
         <module>JAXWSClientDispatchAsync</module>
         <module>JAXWSClientHandler</module>
-        <module>JSEWSServiceProvider</module>
+        <module>JAXWSClientDispatchSOAP</module>
+        <module>JAXWSClientDispatchSource</module>
+        <module>JAXWSClientOneWay</module>
     </modules>
     <build>
         <pluginManagement>
@@ -34,5 +34,4 @@
             </plugins>    
         </pluginManagement>
     </build>
-    <name>JAXWSParent</name>
 </project>

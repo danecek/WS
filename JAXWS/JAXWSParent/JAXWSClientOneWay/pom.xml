@@ -8,7 +8,7 @@
         <artifactId>JAXWSParent</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <artifactId>JAXWSClientDispatchSource</artifactId>
+    <artifactId>JAXWSClientOneWay</artifactId>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>       
     </properties>
@@ -36,7 +36,7 @@
                             <wsdlFiles>                   
                                 <wsdlFile>GreetingImplService.wsdl</wsdlFile>
                             </wsdlFiles>
-                                                        <vmArgs>
+                            <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
                             <!-- *** you need the next line to set the wsdlLocation in the generated stubs *** -->
@@ -54,5 +54,4 @@
             <version>${project.version}</version>
         </dependency>
     </dependencies>
-    <name>JAXWSClientDispatchSource</name>
 </project>

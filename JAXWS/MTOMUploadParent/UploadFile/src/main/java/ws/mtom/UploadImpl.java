@@ -6,14 +6,11 @@
 package ws.mtom;
 
 import com.sun.xml.ws.developer.StreamingDataHandler;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import javax.activation.DataHandler;
 import javax.jws.WebService;
-import javax.xml.bind.annotation.XmlMimeType;
 import javax.xml.ws.WebServiceException;
 import javax.xml.ws.soap.MTOM;
 
@@ -23,11 +20,12 @@ public class UploadImpl {
 
     // Use @XmlMimeType to map to DataHandler on the client side
     public String fileUpload(String name,
-            @XmlMimeType("application/x-binary") DataHandler data) {
+       //     @XmlMimeType("application/x-binary") 
+                    DataHandler data) {
         Path p;
         try {
             StreamingDataHandler dh = (StreamingDataHandler) data;
-            p = Paths.get(name);
+            p = Paths.get(System.getProperty("user.home") + "/" + name);
             Files.copy(dh.getInputStream(), p);
 //            BufferedReader br = new BufferedReader(new InputStreamReader(dh.getInputStream()));
             //  b1 = dh.getInputStream().read();

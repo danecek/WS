@@ -41,10 +41,12 @@ public class JAXWSClientHandler {
         Greeting port = gis.getGreetingImplPort();
         BindingProvider bp = (BindingProvider) port;
         List<Handler> handlerList = bp.getBinding().getHandlerChain();
+        
         handlerList.add(new NewLogicalHandler());
-        Dispatch<SOAPMessage> d = gis.createDispatch(new QName("http://service.ws/", "GreetingImplPort"), SOAPMessage.class, Service.Mode.MESSAGE);
-        SOAPMessage result = d.invoke(createRequest());
-        System.out.println(result.getSOAPBody().getTextContent());
+        System.out.println(port.sayHello("Tom"));
+//        Dispatch<SOAPMessage> d = gis.createDispatch(new QName("http://service.ws/", "GreetingImplPort"), SOAPMessage.class, Service.Mode.MESSAGE);
+//        SOAPMessage result = d.invoke(createRequest());
+ //       System.out.println(result.getSOAPBody().getTextContent());
         System.in.read();
     }
 

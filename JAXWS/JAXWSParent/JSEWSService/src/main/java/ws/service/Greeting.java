@@ -18,5 +18,5 @@ public interface Greeting {
     String sayHello(@WebParam(name = "name") String name);//, @WebParam(name = "surname") String surname) throws Exception;
 
     @Oneway
-    void oneWay();
+    void oneWay(@WebParam(name = "name") String name);
 }

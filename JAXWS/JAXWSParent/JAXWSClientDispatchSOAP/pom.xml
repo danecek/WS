@@ -36,7 +36,7 @@
                             <wsdlFiles>                   
                                 <wsdlFile>GreetingImplService.wsdl</wsdlFile>
                             </wsdlFiles>
-                                                        <vmArgs>
+                            <vmArgs>
                                 <vmArg>-Djavax.xml.accessExternalSchema=all</vmArg>
                             </vmArgs>
                             <!-- *** you need the next line to set the wsdlLocation in the generated stubs *** -->

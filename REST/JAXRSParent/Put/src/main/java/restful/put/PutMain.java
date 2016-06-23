@@ -15,6 +15,8 @@ public class PutMain {
         WebTarget dataListTarget = myAppTarget().path("datalist");
         int responseEntity = dataListTarget.request().put(Entity.text(new Date().toString()), Integer.class);
         System.out.println(responseEntity);
+        responseEntity = dataListTarget.request().put(Entity.text(new Date().toString()), Integer.class);
+        System.out.println(responseEntity);
     }
 
 }

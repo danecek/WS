@@ -46,33 +46,7 @@ public class WSDispachClient {
         System.out.println(result.getSOAPBody().getTextContent());
         System.out.println("******************************************************");
 
-//        Dispatch<Source> ds = gis.createDispatch(new QName("http://service.ws/", "GreetingImplPort"), Source.class, Service.Mode.PAYLOAD);
-//        String payl = "<ns2:sayHello xmlns:ns2=\"http://service.ws/\"><name xmlns=\"\">Frank</name></ns2:sayHello>";
-//        Source results = ds.invoke(new StreamSource(new StringReader(payl)));
-//
-//        TransformerFactory tf = TransformerFactory.newInstance();
-//        final Transformer t = tf.newTransformer();
-//        t.transform(results, new StreamResult(System.out));
-//        System.out.println("**************************************************************");
-//
-//        Dispatch<Source> ds2 = gis.createDispatch(new QName("http://service.ws/", "GreetingImplPort"), Source.class, Service.Mode.PAYLOAD);
-//        String pay2 = "<ns2:sayHello xmlns:ns2=\"http://service.ws/\"><name xmlns=\"\">Frank</name></ns2:sayHello>";
-//        ds2.invokeAsync(new StreamSource(new StringReader(pay2)), new AsyncHandler<Source>() {
-//
-//            @Override
-//            public void handleResponse(Response<Source> res) {
-//                try {
-//                    
-//                    t.transform(res.get(), new StreamResult(System.out));
-//                } catch (InterruptedException ex) {
-//                    Logger.getLogger(WSDispachClient.class.getName()).log(Level.SEVERE, null, ex);
-//                } catch (ExecutionException ex) {
-//                    Logger.getLogger(WSDispachClient.class.getName()).log(Level.SEVERE, null, ex);
-//                } catch (TransformerException ex) {
-//                    Logger.getLogger(WSDispachClient.class.getName()).log(Level.SEVERE, null, ex);
-//                }
-//            }
-//        });
+
     }
 
 }

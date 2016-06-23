@@ -3,7 +3,6 @@ package ws.mtomclientfx;
 import java.awt.Desktop;
 import java.awt.image.BufferedImage;
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -30,7 +29,7 @@ import javax.xml.namespace.QName;
 import javax.xml.ws.Service;
 import ws.mtomserver.ImageServer;
 
-public class MainApp extends Application {
+public class MainApp1 extends Application {
 
     static WritableImage load(String path) throws MalformedURLException {
         URL url = new URL("http://localhost:9999/ws/image?wsdl");
@@ -42,19 +41,15 @@ public class MainApp extends Application {
         BufferedImage image = (BufferedImage) imageServer.downloadImage(path);
         return SwingFXUtils.toFXImage(image, null);
 
-        // return image;
     }
-
-    private final Desktop desktop = Desktop.getDesktop();
 
     @Override
     public void start(final Stage stage) {
-        stage.setTitle("File Chooser Sample");
-
+        stage.setTitle("Load Picture");
+        final ScrollPane sp = new ScrollPane();
         final FileChooser fileChooser = new FileChooser();
 
         final Button openButton = new Button("Open a Picture...");
-        // final Button openMultipleButton = new Button("Open Pictures...");
 
         openButton.setOnAction(
                 new EventHandler<ActionEvent>() {
@@ -62,53 +57,28 @@ public class MainApp extends Application {
             public void handle(final ActionEvent e) {
                 File file = fileChooser.showOpenDialog(stage);
                 if (file != null) {
-                    openFile(file);
+                    try {
+                        Image roses = load(file.getPath());
+
+                        sp.setContent(new ImageView(roses));
+                    } catch (MalformedURLException ex) {
+                        Logger.getLogger(MainApp1.class.getName()).log(Level.SEVERE, null, ex);
+                    }
                 }
             }
         });
 
-        final GridPane inputGridPane = new GridPane();
-
-        GridPane.setConstraints(openButton, 0, 0);
-        inputGridPane.setHgap(6);
-        inputGridPane.setVgap(6);
-        inputGridPane.getChildren().addAll(openButton);
-
         final Pane rootGroup = new VBox(12);
-        rootGroup.getChildren().addAll(inputGridPane);
+        rootGroup.getChildren().addAll(openButton, sp);
         rootGroup.setPadding(new Insets(12, 12, 12, 12));
-
         stage.setScene(new Scene(rootGroup));
         stage.show();
     }
 
     public static void main(String[] args) {
+        System.setProperty("com.sun.xml.internal.ws.transport.http.client.HttpTransportPipe.dump", "true");
         Application.launch(args);
     }
 
-    private void openFile(File file) {
 
-        try {
-            Image roses = load(file.getPath());
-            //    = new Image(new FileInputStream(file));
-            ScrollPane sp = new ScrollPane();
-            sp.setContent(new ImageView(roses));
-            sp.setHbarPolicy(ScrollBarPolicy.NEVER);
-            sp.setVbarPolicy(ScrollBarPolicy.ALWAYS);
-            Scene secondScene = new Scene(sp, roses.getWidth(), roses.getHeight());
-
-            Stage secondStage = new Stage();
-            secondStage.setTitle("Second Stage");
-            secondStage.setScene(secondScene);
-
-//                //Set position of second window, related to primary window.
-//                secondStage.setX(primaryStage.getX() + 250);
-//                secondStage.setY(primaryStage.getY() + 100);
-            secondStage.show();
-        } catch (IOException ex) {
-            Logger.getLogger(MainApp.class.getName()).log(
-                    Level.SEVERE, null, ex
-            );
-        }
-    }
 }

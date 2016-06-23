@@ -11,8 +11,8 @@ public class GreetingImpl implements Greeting {
         return "Hello, Welcome to jax-ws " + name;// + " " + surname;
     }
 
-    public void oneWay() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public void oneWay(String name) {
+        System.out.println(name + "   oneWay *******************************************");
     }
 
 }
