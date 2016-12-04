@@ -5,7 +5,9 @@
  */
 package restful.crud;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import javax.inject.Singleton;
 import javax.ws.rs.*;
@@ -26,12 +28,13 @@ public final class CRUDResource {
         put(new Person(1, "John"));
         put(new Person(2, "Marry"));
     }
-
-    @GET
+    
+        @GET
     @Produces(MediaType.APPLICATION_XML)
-    public Persons persons() {
-        return new Persons(data.values());
+    public List<Person> persons() {
+        return new ArrayList<>(data.values());
     }
+
 
     @Path("{id}")
     public CRUDSubresource sr() {

@@ -7,6 +7,7 @@ package restful.crud;
 
 import java.util.List;
 import javax.ws.rs.client.*;
+import javax.ws.rs.core.GenericType;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
@@ -22,8 +23,13 @@ public class DAO {
         this.collectionTarget = collectionTarget;
     }
 
-    List<Person> readAll() {
-        return collectionTarget.request(MediaType.APPLICATION_XML).get(Persons.class).persons;
+//    List<Person> readAll() {
+//        return collectionTarget.request(MediaType.APPLICATION_XML).get(Persons.class).persons;
+//    }
+
+    List<Person> readAll2() {
+        return collectionTarget.request(MediaType.APPLICATION_XML).get(new GenericType<List<Person>>() {
+        });
     }
 
     void create(Person p) throws CRUDException {

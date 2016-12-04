@@ -36,13 +36,13 @@ public class CRUDMain {
             WebTarget restAppTarget = client.target(Tools.restAppUriBuilder);
             WebTarget collectionTarget = restAppTarget.path("crud");
             DAO dao = new DAO(collectionTarget);
-            System.out.println(dao.readAll());
+            System.out.println(dao.readAll2());
             System.out.println(dao.read(2));
             System.out.println("deleted: " + dao.delete(2));
-            System.out.println(dao.readAll());
+            System.out.println(dao.readAll2());
             dao.create(new Person(3, "Tom"));
             dao.create(new Person(3, "Jerry"));
-            System.out.println(dao.readAll());
+            System.out.println(dao.readAll2());
             System.out.println("deleted: " + dao.delete(2));
         } catch (Exception ex) {
             System.out.println(ex);
